@@ -15,37 +15,38 @@ void merge(T*A,int p,int q,int r){
 		size_t tleft=0;
 		size_t tright=0;
 		size_t place=p;
-		while(place<=r){
-			if(tleft==q+1){
+		while(place<=r){	
+//			std::cout<<"place="<<place<<std::endl;
+//			std::cout<<"tleft="<<tleft<<std::endl;
+//			std::cout<<"tright="<<tright<<std::endl;
+			if(tleft==((q-p)+1)){
 				A[place]=right[tright];
 				tright++;
-	//			std::cout<<"place:"<<place<<std::endl;
 				place++;
 				continue;
 			}
-			if(tright==r+1){
+			if(tright==(r-q)){
 				A[place]=left[tleft];
 				tleft++;
-	//			std::cout<<"place:"<<place<<std::endl;
 				place++;
 				continue;
 			}
 			if(left[tleft]<right[tright]){
-				A[place]=left[tleft];//if temporary left is smaller, let temporty left sit here;
+				A[place]=left[tleft];
 				tleft++;
-//				std::cout<<"place:"<<place<<std::endl;
 				place++;
 			}
 			else{
 				A[place]=right[tright];
 				tright++;
-//				std::cout<<"place:"<<place<<std::endl;
-				place++;
+    		place++;
 			}
-		}
+	}
 		delete[] left;
 		delete[] right;
 	}
+	else{
+	};
 }
 template<typename T>
 void mergesort(T*A,int start,int end){
