@@ -16,10 +16,7 @@ void merge(T*A,int p,int q,int r){
 		size_t tright=0;
 		size_t place=p;
 		while(place<=r){	
-//			std::cout<<"place="<<place<<std::endl;
-//			std::cout<<"tleft="<<tleft<<std::endl;
-//			std::cout<<"tright="<<tright<<std::endl;
-			if(tleft==((q-p)+1)){
+	    if(tleft==((q-p)+1)){
 				A[place]=right[tright];
 				tright++;
 				place++;
