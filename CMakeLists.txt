@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.0)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/..)
+set(CMAKE_CXX_FLAGS "-std=c++11")
+project(mergesort)
+include_directories("${CMAKE_BINARY_DIR}/../headers")
+set(SOURCE ${CMAKE_BINARY_DIR}/../src/mergesort.cpp)
+add_executable(mergesort ${SOURCE})
